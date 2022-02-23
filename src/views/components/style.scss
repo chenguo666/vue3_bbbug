@@ -1,0 +1,812 @@
+.el-dropdown-menu {
+  padding: 0;
+}
+
+.bbbug_main_chat_item {
+  position: relative;
+  min-height: 70px;
+  margin: 10px;
+  text-align: left;
+  padding-top: 30px;
+}
+
+.bbbug_main_chat_mine {
+  text-align: right;
+}
+
+.bbbug_main_chat_head {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_head_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.bbbug_main_chat_mine .bbbug_main_chat_head {
+  left: auto;
+  right: 0px;
+}
+
+.bbbug_main_chat_name {
+  position: absolute;
+  left: 55px;
+  top: 0px;
+  display: inline-block;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.bbbug_main_chat_name_icon {
+  font-size: 12px;
+  color: white;
+  background-color: orangered;
+  padding: 2px;
+  border-radius: 3px;
+  line-height: 12px;
+  display: inline-block;
+}
+
+.bbbug_main_chat_mine .bbbug_main_chat_name {
+  position: absolute;
+  left: auto;
+  right: 55px;
+}
+
+.bbbug_main_chat_context_menu {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.bbbug_main_chat_content {
+  background-color: #e5e5e5;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #666;
+  max-width: 300px;
+  margin-left: 60px;
+  display: inline-block;
+  word-break: break-all;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.bbbug_main_chat_content::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -13px;
+  width: 15px;
+  height: 15px;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-width: 12px;
+  border-bottom-color: currentColor;
+  border-radius: 0 0 0 15px;
+  color: #e5e5e5;
+}
+
+.content_boy::before {
+  color: #66cbff;
+}
+
+.content_girl::before {
+  color: #fe9898;
+}
+
+.content_at::before {
+  color: #666;
+}
+
+.bbbug_main_chat_mine .bbbug_main_chat_content::before {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: -6px;
+  left: calc(100% - 2px);
+  width: 15px;
+  height: 15px;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-width: 12px;
+  border-bottom-color: currentColor;
+  border-radius: 0 0 15px 0;
+}
+
+.bbbug_main_chat_content_reply {
+  color: orangered;
+  font-size: 12px;
+  margin-left: 50px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 50px;
+}
+
+.bbbug_main_chat_mine .bbbug_main_chat_content {
+  margin-left: auto;
+  margin-right: 60px;
+  text-align: left;
+}
+
+.bbbug_main_chat_notice .bbbug_main_chat_notice_title {
+  background-color: #666;
+  color: white;
+  margin: -8px -16px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.bbbug_main_chat_notice .bbbug_main_chat_notice_content {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.bbbug_main_chat_notice::before {
+  color: #666;
+}
+
+.bbbug_main_chat_img {
+  width: 60px;
+  border-radius: 5px;
+}
+
+.bbbug_main_chat {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+
+.bbbug_main_chat_input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+}
+
+.bbbug_main_chat_toolbar_lrc {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  color: #999;
+  font-size: 12px;
+}
+
+.bbbug_main_chat_percent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  height: 1px;
+  background-color: #eee;
+}
+
+.bbbug_main_chat_percent div {
+  position: relative;
+}
+
+.bbbug_main_chat_percent div::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  font-size: 0px;
+  background-color: #999;
+  border-radius: 100%;
+  position: absolute;
+  right: 0;
+  top: -2px;
+}
+
+.bbbug_main_chat_percent div {
+  height: 100%;
+  background-color: #e5e5e5;
+}
+
+.bbbug_main_chat_input_form {
+  padding: 10px;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+}
+
+.bbug_main_chat_input_message {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.bbbug_main_chat_input_send {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border: none;
+  background-color: #eee;
+  color: #999;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_invate {
+  vertical-align: middle;
+  font-size: 14px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.bbbug_main_chat_enable {
+  background-color: #666666;
+  color: #fff;
+}
+
+.bbbug_app {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  right: 0;
+  height: 200px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.bbbug_app_fullpage {
+  height: auto;
+  bottom: 0;
+  border-bottom: none !important;
+}
+
+.bbbug_dark .bbbug_app {
+  border-bottom: 1px solid #444;
+}
+
+.bbbug_app iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.bbbug_app_close {
+  position: absolute;
+  right: 0px;
+  top: 42px;
+  background-color: #ccc;
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bbbug_dark .bbbug_app_close {
+  background-color: #444;
+}
+
+.bbbug_app_close:hover {
+  background-color: orange;
+}
+
+.bbbug_main_chat_history {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  right: 0;
+  bottom: 150px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  z-index: 0;
+}
+
+.bbbug_main_chat_system {
+  text-align: center;
+  margin: 5px 10%;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.bbbug_main_chat_system_text {
+  color: #aaa;
+  background-color: transparent;
+  text-align: center;
+  font-size: 12px;
+}
+
+.bbbug_main_chat_toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  height: 40px;
+}
+
+.bbbug_main_chat_toolbar_tobottom {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.bbbug_main_chat_toolbar_tobottom i {
+  color: #666;
+  background-color: #fff;
+  font-size: 28px;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 42px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bbbug_main_chat_toolbar {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.bbbug_main_chat_toolbar_emoji {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_content_loading {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.bbbug_main_chat_content_loading .iconfont {
+  font-size: 16px;
+  font-weight: bold;
+  color: #999;
+}
+
+.bbbug_main_chat_emojis {
+  width: 280px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 10;
+  position: absolute;
+  left: 20px;
+  bottom: 150px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.bbbug_main_chat_emojis img {
+  width: 36px;
+  height: 36px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_toolbar_img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.bbbug_main_chat_toolbar_img img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_name_time {
+  font-size: 12px;
+  color: #aaa;
+  text-align: left;
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-top: 5px;
+}
+
+.bbbug_main_chat_mine .bbbug_main_chat_name_time {
+  text-align: right;
+}
+
+.bbbug_main_chat_input_quot {
+  position: absolute;
+  left: 90px;
+  bottom: 105px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+.bbbug_main_chat_content_quot {
+  font-size: 12px;
+  color: #aaa;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: inline-block;
+  margin: 5px 50px;
+  cursor: pointer;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content_girl {
+  background-color: #fe9898;
+  color: white;
+}
+
+.content_boy {
+  background-color: #66cbff;
+  color: #333;
+}
+
+.content_at {
+  background-color: #666666;
+  color: white;
+}
+
+.contextmenu {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  position: fixed;
+  z-index: 100;
+}
+
+.contextmenu div {
+  padding: 8px 30px;
+  font-size: 14px;
+  color: #666;
+  border-radius: 10px;
+}
+
+.contextmenu div:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.bbbug_link {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+.bbbug_link a {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.bbbug_link a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.bbbug_main_chat_jump_id {
+  border-radius: 3px;
+  background-color: #ddd;
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  color: #666;
+  padding: 2px 5px;
+}
+
+.bbbug_main_chat_jump {
+  position: relative;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.bbbug_main_chat_jump_desc {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
+  margin-bottom: 40px;
+}
+
+.bbbug_main_chat_jump_tips {
+  position: absolute;
+  background-color: #666;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.bbbug_main_chat_jump_tips font {
+  position: absolute;
+  right: 10px;
+}
+
+.bbbug_main_chat_input_song {
+  font-size: 14px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  color: rgb(121, 115, 115);
+}
+
+.bbbug_main_chat_input_song_name {
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 5px;
+  color: #aaa;
+  vertical-align: middle;
+}
+
+.bbbug_main_chat_input_song_name * {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bbbug_main_chat_input_song_ctrl {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bbbug_main_chat_input_song_ctrl .iconfont {
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.bbbug_main_chat_input_song_ctrl .iconfont:hover {
+  color: orangered;
+}
+
+.bbbug_main_chat_emojis_input {
+  margin-bottom: 10px;
+}
+
+.bbbug_locked {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.bbbug_locked .main {
+  width: 1000px;
+  height: 500px;
+  backdrop-filter: blur(0px);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bbbug_locked .bg_back {
+  filter: blur(50px);
+  position: fixed;
+  left: -100px;
+  right: -100px;
+  top: -100px;
+  bottom: -100px;
+  background: #000 url(https://bbbug.hamm.cn/new/images/bg_dark.jpg) center
+    no-repeat;
+  background-size: cover;
+}
+
+.bbbug_locked .bg {
+  filter: blur(50px);
+  position: fixed;
+  left: -100px;
+  right: -100px;
+  top: -100px;
+  bottom: -100px;
+  background: transparent url(https://bbbug.hamm.cn/new/images/bg_dark.jpg)
+    center no-repeat;
+  background-size: cover;
+}
+
+.bbbug_locked {
+  color: white;
+  z-index: 100;
+}
+
+.bbbug_locked .pic {
+  width: 360px;
+  height: 360px;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bbbug_locked .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.bbbug_locked .info {
+  position: absolute;
+  left: 400px;
+  top: 50px;
+  width: 560px;
+}
+
+.bbbug_locked .name {
+  font-size: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bbbug_locked .desc {
+  font-size: 20px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bbbug_locked .controls {
+  position: absolute;
+  left: 400px;
+  top: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bbbug_locked .controls .iconfont {
+  display: inline-block;
+  font-size: 64px;
+  cursor: pointer;
+}
+
+.bbbug_locked .progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 400px;
+  top: 330px;
+  height: 5px;
+  border-radius: 20px;
+  width: 560px;
+}
+
+.bbbug_locked .progress div {
+  background: rgba(255, 255, 255, 0.5);
+  width: 20%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 20px;
+}
+
+.bbbug_locked .time {
+  position: absolute;
+  left: 400px;
+  top: 340px;
+  color: rgba(255, 255, 255, 0.8);
+  width: 560px;
+}
+
+.bbbug_locked .time .now {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bbbug_locked .time .total {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bbbug_locked .logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.bbbug_locked .logo img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.bbbug_locked .copyright {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bbbug_locked .lrc {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  left: 400px;
+  top: 380px;
+  width: 560px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bbbug_main_menu [data-count] {
+  position: relative;
+}
+
+.bbbug_main_menu [data-count]:not([data-count='0'])::before {
+  content: attr(data-count);
+  font-weight: bold;
+  color: #333;
+  background-color: #999;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: solid 2px currentColor;
+  font-size: 12px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(calc(-50% - 10px), calc(-50% + 8px));
+  pointer-events: none;
+}

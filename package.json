@@ -9,8 +9,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^0.2.7",
     "axios": "^0.26.0",
     "core-js": "^3.6.5",
+    "element-plus": "^2.0.2",
     "vue": "^3.2.8",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
@@ -41,5 +43,11 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
