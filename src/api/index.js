@@ -42,3 +42,25 @@ export const getWebsocketUrl = (data) => {
     data
   })
 }
+export const getLrc = (data) => {
+  return request({
+    url: 'song/getLrc',
+    method: 'POST',
+    data
+  })
+}
+export const upload = (data) => {
+  console.log('data', data)
+  return request({
+    url: 'attach/uploadimage',
+    method: 'POST',
+    data
+  })
+}
+export const updateServerTime = (data) => {
+  return request({
+    url: 'system/time',
+    method: 'POST',
+    data
+  })
+}

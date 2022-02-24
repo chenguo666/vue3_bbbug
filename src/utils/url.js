@@ -35,6 +35,8 @@ export function urldecode(str) {
     return str
   }
 }
+export const wssUrl = 'ws://49.232.138.153:10011'
+export const apiUrl = 'http://music_api.guopro.cn/'
 
 function http2https(str) {
   return str.toString().replace('http://', 'https://')
