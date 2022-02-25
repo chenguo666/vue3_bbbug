@@ -6,9 +6,20 @@
           <div class="music_title">
             <div class="music_header">
               <div class="music_btn_list">
-                <span @click="showSearchSongs"> 点歌 </span>
-                <span @click="showPlaySongList"> 已点 </span>
-                <span @click="showMySongList"> 歌单 </span>
+                <!-- <span @click="showSearchSongs"> -->
+                <span @click="drawer = true">
+                  <img style="vertical-align: middle" src="../assets/1.png" />
+                  点歌
+                </span>
+                <span @click="drawer2 = true"
+                  ><img style="vertical-align: middle" src="../assets/3.png" />
+                  歌单
+                </span>
+                <!-- <span @click="showPlaySongList"
+                  ><img style="vertical-align: middle" src="../assets/2.png" />
+                  已点
+                </span>
+                -->
               </div>
             </div>
           </div>
@@ -34,7 +45,7 @@
                   "
                   class="music_main_chat_item music_main_chat_text"
                   :class="
-                    item.user.user_id == userInfo.user_id
+                    item.user.user_id === userInfo.user_id
                       ? 'music_main_chat_mine'
                       : ''
                   "
@@ -154,6 +165,7 @@
                   <div class="music_main_chat_input_song_ctrl">
                     <i
                       title="音量"
+                      style="color: red; font-size: 32px"
                       @click="setEnableOrDisableVolume"
                       @mouseover="showAudioVolumeBar"
                       class="iconfont volume_bar"
@@ -164,6 +176,7 @@
                       "
                     ></i>
                     <i
+                      style="color: red; font-size: 32px"
                       @click.stop="passTheSong"
                       title="切歌/不喜欢"
                       class="iconfont icon-xiayige"
@@ -233,9 +246,13 @@
       @canplay="canplay"
     ></audio>
   </div>
+  <SearchSongs v-model="drawer"></SearchSongs>
+  <SongsList v-model="drawer2"></SongsList>
 </template>
 
 <script setup>
+import SearchSongs from './components/SearchSongs.vue'
+import SongsList from './components/SongsList.vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import {
   getmyinfo,
@@ -251,6 +268,8 @@ import { useStore } from 'vuex'
 import { ref, reactive, nextTick, onMounted } from 'vue'
 import { getStaticUrl, urldecode, wssUrl, apiUrl } from '@/utils/url.js'
 import './components/style.scss'
+const drawer = ref(false)
+const drawer2 = ref(false)
 // ref
 const noticePlayer = ref(null)
 // const audio_dong = ref(null)
@@ -302,6 +321,10 @@ onMounted(() => {
     })
     .catch(() => {})
 })
+// 搜索歌曲弹出框
+// const showSearchSongs=()=> {
+
+// }
 // 同步时间戳
 
 const getUserInfo = async () => {
@@ -795,11 +818,13 @@ const canplay = () => {
 }
 .music_btn_list {
   float: left;
-  width: 200px;
+  width: 180px;
   height: 100%;
   display: flex;
   line-height: 50px;
+  font-size: 20px;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .logo-1 {
@@ -815,7 +840,7 @@ const canplay = () => {
 }
 .centerlrc {
   position: absolute;
-  top: 10%;
+  top: 20%;
   width: 100%;
   z-index: 9999;
   margin: 0 auto;

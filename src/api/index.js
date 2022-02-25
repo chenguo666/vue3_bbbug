@@ -64,3 +64,24 @@ export const updateServerTime = (data) => {
     data
   })
 }
+export const songsearch = (data) => {
+  return request({
+    url: 'song/search',
+    method: 'POST',
+    data
+  })
+}
+export const songaddSong = (data) => {
+  return request({
+    url: 'song/addSong',
+    method: 'POST',
+    data
+  })
+}
+export const songmySongList = (data) => {
+  return request({
+    url: 'song/songList',
+    method: 'POST',
+    data
+  })
+}
