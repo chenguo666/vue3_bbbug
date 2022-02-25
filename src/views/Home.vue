@@ -1,13 +1,10 @@
 <template>
-  <div id="app">
+  <div>
     <div>
       <div>
         <div>
           <div class="music_title">
             <div class="music_header">
-              <span class="header_title">
-                {{ roomInfo.room_name }}
-              </span>
               <div class="music_btn_list">
                 <span @click="showSearchSongs"> 点歌 </span>
                 <span @click="showPlaySongList"> 已点 </span>
@@ -15,8 +12,11 @@
               </div>
             </div>
           </div>
-          <div>
-            <span>{{ lrcString }}</span>
+          <div class="centerlrc">
+            <p class="logo-1" v-if="songInfo">
+              {{ songInfo.song.name }}({{ songInfo.song.singer }}) :
+              {{ lrcString }}
+            </p>
           </div>
           <div>
             <div
@@ -135,15 +135,6 @@
                     item.content
                   }}</span>
                 </div>
-                <div v-if="item.type == 'join'" class="music_main_chat_system">
-                  <span class="music_main_chat_system_text">
-                    欢迎<span v-if="item.where">{{ item.where }}的</span
-                    ><span v-if="!item.user"
-                      ><span v-if="item.plat">{{ item.plat }}用户</span
-                      ><span v-if="!item.plat">临时用户</span></span
-                    >{{ item.user ? '回来!' : '' }}
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -160,16 +151,6 @@
                 >
                 </el-slider>
                 <div class="music_main_chat_input_song" v-if="isPlayerShow">
-                  <div
-                    class="music_main_chat_input_song_name"
-                    v-if="songInfo && songInfo.song"
-                  >
-                    <span
-                      >{{ songInfo.song.name }}({{
-                        songInfo.song.singer
-                      }})</span
-                    >
-                  </div>
                   <div class="music_main_chat_input_song_ctrl">
                     <i
                       title="音量"
@@ -268,13 +249,7 @@ import {
 } from '@/api'
 import { useStore } from 'vuex'
 import { ref, reactive, nextTick, onMounted } from 'vue'
-import {
-  getStaticUrl,
-  getImageWidth,
-  urldecode,
-  wssUrl,
-  apiUrl
-} from '@/utils/url.js'
+import { getStaticUrl, urldecode, wssUrl, apiUrl } from '@/utils/url.js'
 import './components/style.scss'
 // ref
 const noticePlayer = ref(null)
@@ -825,5 +800,31 @@ const canplay = () => {
   display: flex;
   line-height: 50px;
   justify-content: space-between;
+}
+
+.logo-1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: 'Archivo Black', 'Archivo', sans-serif;
+  font-weight: normal;
+  display: block;
+  height: auto;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 0.2em rgb(41, 95, 241), -0 -0 0.2em rgb(26, 154, 228);
+}
+.centerlrc {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  z-index: 9999;
+  margin: 0 auto;
+}
+.music-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 </style>

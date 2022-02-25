@@ -99,11 +99,11 @@
 }
 
 .content_boy::before {
-  color: #66cbff;
+  color: #2fe1ee;
 }
 
 .content_girl::before {
-  color: #fe9898;
+  color: #2fe1ee;
 }
 
 .content_at::before {
@@ -331,6 +331,20 @@
   padding-bottom: 30px;
   z-index: 0;
 }
+.music_main_chat_history::-webkit-scrollbar {
+  width: 4px;
+  /*height: 4px;*/
+}
+.music_main_chat_history::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.music_main_chat_history::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
 
 .music_main_chat_system {
   text-align: center;
@@ -475,12 +489,12 @@
 }
 
 .content_girl {
-  background-color: #fe9898;
+  background-color: #2fe1ee;
   color: white;
 }
 
 .content_boy {
-  background-color: #66cbff;
+  background-color: #2fe1ee;
   color: #333;
 }
 
