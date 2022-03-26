@@ -230,6 +230,9 @@
       :src="getStaticUrl('new/mp3/dingdong.mp3')"
       ref="noticePlayer"
     ></audio>
+    <audio :src="getStaticUrl('new/mp3/dong.m4a')" ref="audio_dong"></audio>
+    <audio :src="getStaticUrl('new/mp3/ci.m4a')" ref="audio_ci"></audio>
+    <audio :src="getStaticUrl('new/mp3/da.m4a')" ref="audio_da"></audio>
     <audio :src="nextAudioUrl" ref="preloadAudio" control1></audio>
     <audio
       :src="audioUrl"
@@ -249,7 +252,7 @@
 <script setup>
 import SearchSongs from './components/SearchSongs.vue'
 import SongsList from './components/SongsList.vue'
-// import { ElMessageBox, ElMessage } from 'element-plus'
+import { ElMessageBox, ElMessage } from 'element-plus'
 import {
   getmyinfo,
   getRoomInfo,
@@ -512,6 +515,7 @@ const connectWebsocket = () => {
 const messageController = (data) => {
   try {
     let obj = {}
+    // 这里有点尴尬
     try {
       obj = JSON.parse(data)
     } catch (e) {
@@ -536,6 +540,11 @@ const messageController = (data) => {
             obj.content = decodeURIComponent(obj.content)
           }
         }
+
+        obj.isAtAll = !!(
+          obj.content.indexOf('@全体') === 0 &&
+          (obj.user.user_id === roomInfo.value.room_user || obj.user.user_admin)
+        )
         if (obj.user.user_id === userInfo.value.user_id) {
           for (let i = messageList.value.length - 1; i >= 0; i--) {
             if (messageList.value[i].loading === 1) {
@@ -546,6 +555,20 @@ const messageController = (data) => {
         }
         messageList.value.push(obj)
         break
+      case 'link':
+      case 'img':
+      case 'system':
+        if (messageList.value.length > historyMax) {
+          messageList.value.shift()
+        }
+        messageList.value.push(obj)
+        break
+      // case 'join':
+      //   if (messageList.value.length > historyMax) {
+      //     messageList.value.shift()
+      //   }
+      //   messageList.value.push(obj)
+      //   break
       case 'addSong':
         addSystemMessage(
           urldecode(obj.user.user_name) +
@@ -556,6 +579,26 @@ const messageController = (data) => {
             ')'
         )
         console.log('messageList.value', messageList.value)
+        break
+      case 'push':
+        addSystemMessage(
+          urldecode(obj.user.user_name) +
+            ' 顶了下《' +
+            obj.song.name +
+            '》(' +
+            obj.song.singer +
+            ')'
+        )
+        break
+      case 'removeSong':
+        addSystemMessage(
+          urldecode(obj.user.user_name) +
+            ' 将歌曲 《' +
+            obj.song.name +
+            '》(' +
+            obj.song.singer +
+            ') 从队列移除'
+        )
         break
       case 'pass':
         musicLrcObj.value = {}
@@ -568,6 +611,9 @@ const messageController = (data) => {
             obj.song.singer +
             ') '
         )
+        break
+      case 'all':
+        addSystemMessage(obj.content, '#fff', '#666')
         break
       case 'preload':
         nextAudioUrl.value = obj.url

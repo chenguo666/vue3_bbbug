@@ -3,7 +3,8 @@ import { ElMessage } from 'element-plus'
 import { diffTokenTime } from '@/utils/auth'
 import store from '@/store'
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API,
+  // baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: 'http://music_api.guopro.cn/api/',
   timeout: 5000
 })
 

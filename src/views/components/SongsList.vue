@@ -12,7 +12,7 @@
             <div class="span_text">
               {{ item.song.name }}-{{ item.song.singer }}
             </div>
-            <el-button @click="playSong(index)">点歌</el-button>
+            <!-- <el-button @click="playSong(index)">点歌</el-button> -->
           </div>
         </div>
       </div>

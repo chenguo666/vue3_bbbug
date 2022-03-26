@@ -8,7 +8,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: url('./assets/bg.gif');
+  background: url('./assets/bg.gif') no-repeat;
+  background-size: 100% 100%;
   color: #fff;
   // background-color: rgba(0, 0, 0, 0.35);
 }
