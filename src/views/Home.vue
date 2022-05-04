@@ -317,11 +317,6 @@ onMounted(() => {
     })
     .catch(() => {})
 })
-// 搜索歌曲弹出框
-// const showSearchSongs=()=> {
-
-// }
-// 同步时间戳
 
 const getUserInfo = async () => {
   const info2 = await updateServerTime()
@@ -342,7 +337,6 @@ const RoomInfo = async () => {
   roomInfo.value = info
   getWebsocketUrls()
 }
-
 const getMessageList = async () => {
   const info = await MessageList({
     room_id: '1001',
@@ -377,7 +371,6 @@ const getMessageList = async () => {
       messageList.value.unshift(_obj)
     }
   }
-  // console.log(messageList.value)
   if (messageList.value.length > historyMax) {
     messageList.value.shift()
   }
@@ -437,19 +430,6 @@ const sendMessage = (e = false) => {
   if (messageList.value.length > historyMax) {
     messageList.value.shift()
   }
-  // console.log(messageList.value)
-
-  // const _tempMessage = {
-  //   type: 'text',
-  //   user: userInfo.value,
-  //   content: encodeURIComponent(message.value),
-  //   time: parseInt(new Date().valueOf() / 1000),
-  //   at: false,
-  //   isAtAll: false,
-  //   where: 'channel'
-  // }
-  // console.log(_tempMessage)
-  // messageList.value.push(_tempMessage)
   messageSend({
     where: 'channel',
     to: '1001',
@@ -510,6 +490,7 @@ const connectWebsocket = () => {
   }
 }
 const messageController = (data) => {
+  // console.log('data', data)
   try {
     let obj = {}
     try {
@@ -517,7 +498,6 @@ const messageController = (data) => {
     } catch (e) {
       return
     }
-
     if (messageList.value.length > historyMax) {
       messageList.value.shift()
     }
@@ -555,7 +535,7 @@ const messageController = (data) => {
             obj.song.singer +
             ')'
         )
-        console.log('messageList.value', messageList.value)
+        // console.log('messageList.value', messageList.value)
         break
       case 'pass':
         musicLrcObj.value = {}

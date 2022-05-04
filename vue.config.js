@@ -4,7 +4,8 @@ const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 // 匹配此 {RegExp} 的资源
-const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i
+const productionGzipExtensions =
+  /\.(js|css|json|txt|html|ico|svg|jpg|png)(\?.*)?$/i
 module.exports = {
   configureWebpack: (config) => {
     config.plugins.push(
